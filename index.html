@@ -158,7 +158,7 @@
                 <h2>
                     LobeChat
                 </h2>
-                <h2><img src="https://raw.gitmirror.com/Alfred-Windsor/AIkit/main/lobe.png" alt="ChatGPT Next Web Icon" className="project-icon" /> LobeChat</h2>
+                <h2><img src="https://raw.gitmirror.com/Alfred-Windsor/AIkit/main/lobe.png" alt="LobeChat Icon" className="project-icon" /> LobeChat</h2>
                 <p>LobeChat是一款创新的智能对话平台，旨在提供丰富、个性化的交流体验。它结合了GPT-4-Vision视觉识别、TTS&STT语音交流、文生图创意表达和插件系统等前沿技术，满足多样化需求。无论是在桌面还是移动设备上，其渐进式Web应用都保证了高性能体验。此外，它还提供自定义主题、专门的移动设备适配和助手市场，旨在提升您的工作和学习效率。</p>
                 <a href="https://announcement.nature.mba/" class="button button-center">进入站点</a>
             </div>
@@ -166,65 +166,12 @@
                 <h2>
                     智谱清言
                 </h2>
+                <h2><img src="https://raw.gitmirror.com/Alfred-Windsor/AIkit/main/chatglm.png" alt="LobeChat Icon" className="project-icon" /> Chatglm</h2>
                 <p>智谱清言是清华大学KEG实验室和智谱AI公司于 2023 联合训练的语言模型 GLM-4 开发的人工智能助手。它可以针对用户的问题和要求提供适当的答复和支持。无论是回答常见问题、提供实用建议还是进行自然语言对话，智谱清言都能胜任。它的应用场景广泛，可用于客户服务、在线教育、智能家居等多个专业领域，为不同需求的用户提供智能化的服务。</p>
                 <a href="https://chatglm.cn/" class="button button-center">进入站点</a>
             </div>
         </div>
     </div>
     <p class="disclaimer">请注意：本站仅对AI工具进行整理，不保证其性能及安全性，使用者应谨慎评估，自行承担风险。</p>
-    <script>
-        (function(){
-    var btn = document.createElement('div');
-    btn.innerText = '客服';
-    btn.style.cssText = 'width: 60px; height: 60px; background-color: #007bff; border-radius: 50%; color: white; text-align: center; line-height: 60px; position: fixed; bottom: 80px; right: 20px; cursor: pointer; user-select: none; z-index: 10000;';
-    document.body.appendChild(btn);
-
-    var isMoving = false, wasMoved = false, currentX, currentY, initialX, initialY;
-
-    function startMove(e) {
-        isMoving = true;
-        initialX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
-        initialY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
-        wasMoved = false; // reset move flag on new interaction
-    }
-
-    function move(e) {
-        if (isMoving) {
-            e.preventDefault();
-            currentX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
-            currentY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
-            var deltaX = currentX - initialX;
-            var deltaY = currentY - initialY;
-            if (deltaX !== 0 || deltaY !== 0) {
-                wasMoved = true; // flag that there was movement
-            }
-            btn.style.left = btn.offsetLeft + deltaX + 'px';
-            btn.style.top = btn.offsetTop + deltaY + 'px';
-            initialX = currentX;
-            initialY = currentY;
-        }
-    }
-
-    function endMove(e) {
-        isMoving = false;
-    }
-
-    // Mouse events
-    btn.onmousedown = startMove;
-    document.onmousemove = move;
-    document.onmouseup = endMove;
-
-    // Touch events
-    btn.addEventListener('touchstart', startMove, {passive: false});
-    btn.addEventListener('touchmove', move, {passive: false});
-    btn.addEventListener('touchend', endMove);
-
-    btn.onclick = function(e) {
-        if (!wasMoved) { // Only open link if the button wasn't moved
-            window.open('https://tawk.to/chat/658a605007843602b8058768/1hj7rccke', '_blank');
-        }
-    };
-})();
-</script>
 </body>
 </html>
