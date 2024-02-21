@@ -136,6 +136,19 @@
             margin-top: 20px;
         }
     </style>
+    <script type="text/javascript">
+        // JavaScript 用于重定向的函数
+        function redirectToLobeChat() {
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            var urlDesktop = 'https://lobe.nature.mba/'; // 电脑端URL
+            var urlMobile = 'https://lobe.nature.mba/chat/mobile?session=inbox'; // 移动端URL
+            if (isMobile) {
+                window.location.href = urlMobile;
+            } else {
+                window.location.href = urlDesktop;
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="App">
@@ -157,7 +170,7 @@
             <div class="project">
                 <h2><img src="https://raw.gitmirror.com/Alfred-Windsor/AIkit/main/lobe.png" alt="lobe Icon" class="project-icon" /> LobeChat</h2>
                 <p>LobeChat是一款创新的智能对话平台，旨在提供丰富、个性化的交流体验。它结合了GPT-4-Vision视觉识别、TTS&STT语音交流、文生图创意表达和插件系统等前沿技术，满足多样化需求。无论是在桌面还是移动设备上，其渐进式Web应用都保证了高性能体验。此外，它还提供自定义主题、专门的移动设备适配和助手市场，旨在提升您的工作和学习效率。</p>
-                <a href="https://lobe.nature.mba/chat?session=inbox" class="button button-center">进入站点</a>
+                <a href="javascript:void(0);" onclick="redirectToLobeChat()" class="button button-center">进入站点</a>
             </div>
         </div>
         <div class="category">
