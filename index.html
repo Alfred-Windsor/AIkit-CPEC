@@ -191,13 +191,44 @@
         </div>
     </div>
     <p class="disclaimer">请注意：本站仅对AI工具进行整理，不保证其性能及安全性，使用者应谨慎评估，自行承担风险。</p>
-    <script
-  src="https://share.fastgpt.in/js/iframe.js"
-  id="chatbot-iframe" 
-  data-bot-src="https://share.fastgpt.in/chat/share?shareId=3t38f56jv1sr4hcentmoyjb9" 
-  data-default-open="true"
-  data-drag="true"
-  defer
-/>
+        <script>
+            (function(){
+            var btn = document.createElement('div');
+            btn.innerText = '助手';
+            btn.style.cssText = 'width: 60px; height: 60px; background-color: #007bff; border-radius: 50%; color: white; text-align: center; line-height: 60px; position: fixed; bottom: 80px; right: 20px; cursor: pointer; user-select: none; z-index: 10000;';
+            document.body.appendChild(btn);
+            var isMoving = false, wasMoved = false, startPos = {}, currentPos = {};
+            function setPos(e, pos) {
+                pos.x = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+                pos.y = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+            }
+            function startMove(e) {
+                isMoving = true;
+                setPos(e, startPos);
+                wasMoved = false;
+            }
+            function move(e) {
+                if (!isMoving) return;
+                e.preventDefault();
+                setPos(e, currentPos);
+                var deltaX = currentPos.x - startPos.x;
+                var deltaY = currentPos.y - startPos.y;
+                if (deltaX || deltaY) wasMoved = true;
+                btn.style.left = btn.offsetLeft + deltaX + 'px';
+                btn.style.top = btn.offsetTop + deltaY + 'px';
+                startPos.x = currentPos.x;
+                startPos.y = currentPos.y;
+            }
+            function endMove() {
+                isMoving = false;
+            }
+            btn.onmousedown = btn.ontouchstart = startMove;
+            document.onmousemove = document.ontouchmove = move;
+            document.onmouseup = document.ontouchend = endMove;
+            btn.onclick = function(e) {
+                if (!wasMoved) window.open('https://share.fastgpt.in/chat/share?shareId=3t38f56jv1sr4hcentmoyjb9', '_blank');
+            };
+        })();
+    </script>
 </body>
 </html>
