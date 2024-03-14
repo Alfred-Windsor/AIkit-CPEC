@@ -66,11 +66,11 @@
         }
         .button-group {
             display: flex;
-            justify-content: center; /* 改为居中对齐 */
+            justify-content: center;
             align-items: center;
-            max-width: 100%; /* 调整最大宽度以适应更大的按钮 */
+            max-width: 100%;
             margin: 0 auto;
-            gap: 30px; /* 按需调整按钮之间的间距 */
+            gap: 30px;
         }
         .button, .credential-button {
             display: inline-block;
@@ -83,14 +83,13 @@
             cursor: pointer;
             font-size: 16px;
             white-space: nowrap;
-            margin-right: 40px; /* 为按钮右侧添加间距 */
+            margin-right: 40px;
         }
-        /* 为获取凭证按钮设置不同的背景颜色 */
-        .credential-button {
-            background-color: #28a745; /* 绿色 */
-        }
-        /* 调整最后一个按钮取消右侧间距 */
-        .project .button:last-child, .project .credential-button:last-child {
+        .credential-button-disabled {
+            background-color: #ccc; /* 灰色背景 */
+            color: #666; /* 深灰色文字 */
+            cursor: not-allowed; /* 禁止图标 */
+            pointer-events: none; /* 禁止点击 */
             margin-right: 0;
         }
         .category-line {
